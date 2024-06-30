@@ -1,4 +1,4 @@
-package com.example.example.http.client;
+package com.example.example.http.client.rest_template;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import java.util.Map;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public class RestTemplateResponse {
+public class ResponseDto {
 
     private String url;
     private String title;
@@ -21,11 +21,11 @@ public class RestTemplateResponse {
     @Override
     public String toString() {
         return String.format("""
-                RestTemplateResonse
-                url : %s
-                title : %s
-                description : %s
-                """,
+                        RestTemplateResponse
+                        url : %s
+                        title : %s
+                        description : %s
+                        """,
                 this.url, this.title, this.description
         );
     }

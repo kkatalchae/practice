@@ -1,4 +1,4 @@
-package com.example.example.http.client;
+package com.example.example.http.client.rest_template;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +17,12 @@ public class RestTemplateService {
     public void requestRestTemplate() {
         URI uri = UriComponentsBuilder
                 .fromUriString("http://localhost:8080")
-                .path("/api/rest-template")
+                .path("/api/test")
                 .queryParam("url", "http://localhost:8080")
                 .build()
                 .toUri();
 
-        ResponseEntity<RestTemplateResponse> response = restTemplate.getForEntity(uri, RestTemplateResponse.class);
+        ResponseEntity<ResponseDto> response = restTemplate.getForEntity(uri, ResponseDto.class);
 
         System.out.println(response.getBody().toString());
     }

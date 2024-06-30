@@ -1,4 +1,4 @@
-package com.example.example.http.client;
+package com.example.example.http.client.rest_template;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
