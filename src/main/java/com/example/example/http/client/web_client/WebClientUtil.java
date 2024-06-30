@@ -13,6 +13,7 @@ public class WebClientUtil {
         return webClientConfig.webClient().method(HttpMethod.GET)
                 .uri(url)
                 // retrieve : body only, exchange : httpStatus, headers, body
+                // Mono : 0 - 1 개 데이터, Flux : 0 - N 개 데이터
                 .exchangeToMono(clientResponse -> {
                     if (clientResponse.statusCode().is2xxSuccessful()) {
                         return clientResponse.bodyToMono(responseDtoClass);
